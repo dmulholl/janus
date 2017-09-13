@@ -1,11 +1,9 @@
 package main
 
-
 import (
     "fmt"
     "github.com/dmulholland/args"
 )
-
 
 // This sample application will parse its own command-line arguments.
 func main() {
@@ -56,7 +54,6 @@ func main() {
     // instance. Here we simply dump the parser to stdout.
     fmt.Println(parser)
 }
-
 
 // Callback function for the 'foo' command. The function receives an ArgParser
 // instance containing the command's parsed arguments. Here we simply dump it
