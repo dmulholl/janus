@@ -26,4 +26,4 @@ Args is a minimalist argument-parsing library designed for building elegant comm
 
 
 [docs]: https://mulholland.xyz/docs/args/
-[sample]: https://github.com/dmulholland/args/blob/master/example
+[sample]: https://github.com/dmulholland/args/blob/master/example/main.go
