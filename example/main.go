@@ -12,7 +12,7 @@ func main() {
     // string. Specifying help text activates an automatic --help flag;
     // specifying a version string activates an automatic --version flag.
     parser := args.NewParser()
-    parser.Helptext = "App Help!"
+    parser.Helptext = "App Help"
     parser.Version = "Version 1.2.3"
 
     // Register a flag, --bool, with a single-character alias, -b. A flag is a
@@ -35,7 +35,7 @@ func main() {
 
     // Register a command 'foo'. We need to supply the command's help text and
     // callback method.
-    cmdParser := parser.NewCmd("foo", "Command Help!", callback)
+    cmdParser := parser.NewCmd("foo", "Command Help", callback)
 
     // Registering a command returns a new ArgParser instance dedicated to
     // parsing the command's arguments. We can register as many flags and
