@@ -21,7 +21,7 @@ func main() {
 
     // Register a string option, --string <arg>, with a single-character
     // alias, -s <arg>. The default fallback value for string options is the
-    // empty string. Here we specify a custom fallback value.
+    // empty string. Here we specify a custom fallback value, "foobar".
     parser.NewString("string s", "foobar")
 
     // Register an integer option, --int <arg>, with a single-character alias,

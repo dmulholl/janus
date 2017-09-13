@@ -46,7 +46,7 @@ type option struct {
 }
 
 
-// Attempt to set the value of an option by parsing a string argument.
+// Attempts to set the value of an option by parsing a string argument.
 func (opt *option) trySet(arg string) {
     switch opt.optiontype {
 
