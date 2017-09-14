@@ -53,22 +53,22 @@ Option values can be separated on the command line by either a space, `--foo 123
 
 ||  `func (parser *ArgParser) NewFlag(name string)`  ||
 
-    Register a new flag (a boolean option) with a default value of `false`. Flag options take no arguments but are either present (`true`) or absent (`false`).
+    Register a flag (a boolean option) with a default value of `false`. Flag options take no arguments but are either present (`true`) or absent (`false`).
 
 
 ||  `func (parser *ArgParser) NewFloat(name string, fallback float64 = 0.0)`  ||
 
-    Register a new floating-point option, optionally specifying a custom fallback value. (The default fallback value is `0`.)
+    Register a floating-point option, optionally specifying a custom fallback value. (The default fallback value is `0`.)
 
 
 ||  `func (parser *ArgParser) NewInt(name string, fallback int = 0)`  ||
 
-    Register a new integer option, optionally specifying a custom fallback value. (The default fallback value is `0`.)
+    Register an integer option, optionally specifying a custom fallback value. (The default fallback value is `0`.)
 
 
 ||  `func (parser *ArgParser) NewString(name string, fallback string = "")`  ||
 
-    Register a new string option, optionally specifying a custom fallback value. (The default fallback value is the empty string.)
+    Register a string option, optionally specifying a custom fallback value. (The default fallback value is the empty string.)
 
 
 
