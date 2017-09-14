@@ -16,7 +16,7 @@ import (
 
 
 // Package version.
-const Version = "0.1.0"
+const Version = "0.1.1"
 
 
 // Print a message to stderr and exit with a non-zero error code.
@@ -218,15 +218,24 @@ func (parser *ArgParser) NewFloat(name string, fallback ...float64) {
 // -----------------------------------------------------------------------------
 
 
+// Print an informative error message if a dev typos an option name.
+func (parser *ArgParser) getOpt(name string) *option {
+    if opt, found := parser.options[name]; found {
+        return opt
+    }
+    panic(fmt.Sprintf("args: '%s' is not a registered option name", name))
+}
+
+
 // Found returns true if the specified option was found while parsing.
 func (parser *ArgParser) Found(name string) bool {
-    return parser.options[name].found
+    return parser.getOpt(name).found
 }
 
 
 // GetFlag returns the value of the specified boolean option.
 func (parser *ArgParser) GetFlag(name string) bool {
-    opt := parser.options[name]
+    opt := parser.getOpt(name)
     if len(opt.bools) > 0 {
         return opt.bools[len(opt.bools) - 1]
     } else {
@@ -237,7 +246,7 @@ func (parser *ArgParser) GetFlag(name string) bool {
 
 // GetString returns the value of the specified string option.
 func (parser *ArgParser) GetString(name string) string {
-    opt := parser.options[name]
+    opt := parser.getOpt(name)
     if len(opt.strings) > 0 {
         return opt.strings[len(opt.strings) - 1]
     } else {
@@ -248,7 +257,7 @@ func (parser *ArgParser) GetString(name string) string {
 
 // GetInt returns the value of the specified integer option.
 func (parser *ArgParser) GetInt(name string) int {
-    opt := parser.options[name]
+    opt := parser.getOpt(name)
     if len(opt.ints) > 0 {
         return opt.ints[len(opt.ints) - 1]
     } else {
@@ -259,7 +268,7 @@ func (parser *ArgParser) GetInt(name string) int {
 
 // GetFloat returns the value of the specified floating-point option.
 func (parser *ArgParser) GetFloat(name string) float64 {
-    opt := parser.options[name]
+    opt := parser.getOpt(name)
     if len(opt.floats) > 0 {
         return opt.floats[len(opt.floats) - 1]
     } else {
@@ -270,7 +279,7 @@ func (parser *ArgParser) GetFloat(name string) float64 {
 
 // LenList returns the length of the specified option's list of values.
 func (parser *ArgParser) LenList(name string) int {
-    opt := parser.options[name]
+    opt := parser.getOpt(name)
     switch opt.optiontype {
         case "flag":
             return len(opt.bools)
@@ -287,19 +296,19 @@ func (parser *ArgParser) LenList(name string) int {
 
 // GetStringList returns the specified option's list of values.
 func (parser *ArgParser) GetStringList(name string) []string {
-    return parser.options[name].strings
+    return parser.getOpt(name).strings
 }
 
 
 // GetIntList returns the specified option's list of values.
 func (parser *ArgParser) GetIntList(name string) []int {
-    return parser.options[name].ints
+    return parser.getOpt(name).ints
 }
 
 
 // GetFloatList returns the specified option's list of values.
 func (parser *ArgParser) GetFloatList(name string) []float64 {
-    return parser.options[name].floats
+    return parser.getOpt(name).floats
 }
 
 
