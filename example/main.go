@@ -13,7 +13,7 @@ func main() {
     // specifying a version string activates an automatic --version flag.
     parser := args.NewParser()
     parser.Helptext = "App Help"
-    parser.Version = "Version 1.2.3"
+    parser.Version = "1.2.3"
 
     // Register a flag, --bool, with a single-character alias, -b. A flag is a
     // boolean option - it's either present (true) or absent (false).
