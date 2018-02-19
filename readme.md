@@ -1,6 +1,6 @@
 # Args
 
-Args is a minimalist argument-parsing library designed for building elegant command-line interfaces.
+Args is a Go library for parsing command line arguments.
 
 
 #### Features
