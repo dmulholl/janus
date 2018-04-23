@@ -16,7 +16,7 @@ import (
 
 
 // Package version.
-const Version = "0.1.1"
+const Version = "1.0.0"
 
 
 // Print a message to stderr and exit with a non-zero error code.
