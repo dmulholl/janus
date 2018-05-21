@@ -50,7 +50,7 @@ Alternatively, you can incorporate the single, public-domain `args.go` file dire
 * [Online Documentation][docs]
 
 [github]: https://github.com/dmulholland/args
-[docs]: https://mulholland.xyz/docs/args/
+[docs]: https://darrenmulholland.com/docs/args/
 [sample]: https://github.com/dmulholland/args/blob/master/example/main.go
 
 
