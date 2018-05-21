@@ -25,5 +25,5 @@ Args is a Go library for parsing command line arguments.
 * [Sample Application][sample]
 
 
-[docs]: https://mulholland.xyz/docs/args/
+[docs]: https://darrenmulholland.com/docs/args/
 [sample]: https://github.com/dmulholland/args/blob/master/example/main.go
