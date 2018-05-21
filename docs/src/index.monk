@@ -1,12 +1,12 @@
 ---
 title: Home
-meta title: Args &mdash; an argument-parsing library for Go
+meta title: Janus &mdash; an argument-parsing library for Go
 meta description: >
-    Args is a minimalist argument-parsing library designed for building
+    Janus is an argument-parsing library designed for building
     elegant command-line interfaces.
 ---
 
-Args is an argument-parsing library designed for building elegant command-line interfaces.
+Janus is an argument-parsing library designed for building elegant command-line interfaces.
 
 
 
@@ -31,15 +31,15 @@ Args is an argument-parsing library designed for building elegant command-line i
 
 Install directly from Github:
 
-    $ go get github.com/dmulholland/args
+    $ go get github.com/dmulholland/janus-go/janus
 
-Import the `args` package:
+Import the `janus` package:
 
 ::: go
 
-    import "github.com/dmulholland/args"
+    import "github.com/dmulholland/janus-go/janus"
 
-Alternatively, you can incorporate the single, public-domain `args.go` file directly into your application. The library has no external dependencies.
+Alternatively, you can incorporate the single, public-domain `janus.go` file directly into your application. The library has no external dependencies.
 
 
 
@@ -47,11 +47,9 @@ Alternatively, you can incorporate the single, public-domain `args.go` file dire
 
 * [Github Homepage][github]
 * [Sample Application][sample]
-* [Online Documentation][docs]
 
-[github]: https://github.com/dmulholland/args
-[docs]: https://darrenmulholland.com/docs/args/
-[sample]: https://github.com/dmulholland/args/blob/master/example/main.go
+[github]: https://github.com/dmulholland/janus-go
+[sample]: https://github.com/dmulholland/janus-go/blob/master/example/main.go
 
 
 

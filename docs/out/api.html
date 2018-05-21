@@ -14,7 +14,7 @@
   <body class="node-api node">
 
     <header class="masthead">
-      <h1><a href="index.html">Args</a></h1>
+      <h1><a href="index.html">Janus</a></h1>
       
         <p class="tagline">An argument-parsing library for Go.</p>
       
@@ -65,16 +65,16 @@
 Install directly from Github:
 </p>
 <pre>
-$ go get github.com/dmulholland/args
+$ go get github.com/dmulholland/janus-go/janus
 </pre>
 <p>
-Import the <code>args</code> package:
+Import the <code>janus</code> package:
 </p>
 <pre class="lang-go pygments" data-lang="go">
-<span class="kn">import</span> <span class="s">&quot;github.com/dmulholland/args&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;github.com/dmulholland/janus-go/janus&quot;</span>
 </pre>
 <p>
-Alternatively, you can incorporate the single, public-domain <code>args.go</code> file directly into your application. The library has no external dependencies.
+Alternatively, you can incorporate the single, public-domain <code>janus.go</code> file directly into your application. The library has no external dependencies.
 </p>
 <h2 id="basic-usage">
 Basic Usage
@@ -83,7 +83,7 @@ Basic Usage
 Initialize an argument parser, optionally specifying the application's help text and version string:
 </p>
 <pre class="lang-go pygments" data-lang="go">
-<span class="nx">parser</span> <span class="o">:=</span> <span class="nx">args</span><span class="p">.</span><span class="nx">NewParser</span><span class="p">()</span>
+<span class="nx">parser</span> <span class="o">:=</span> <span class="nx">janus</span><span class="p">.</span><span class="nx">NewParser</span><span class="p">()</span>
 
 <span class="nx">parser</span><span class="p">.</span><span class="nx">Helptext</span> <span class="p">=</span> <span class="s">&quot;blah&quot;</span>
 <span class="nx">parser</span><span class="p">.</span><span class="nx">Version</span> <span class="p">=</span> <span class="s">&quot;1.2.3&quot;</span>
@@ -104,7 +104,7 @@ Parsed option values can be retrieved from the parser instance itself.
 Register Options
 </h2>
 <p>
-Args supports long-form options, <code>--foo</code>, with single-character shortcuts, <code>-f</code>.
+Janus supports long-form options, <code>--foo</code>, with single-character shortcuts, <code>-f</code>.
 </p>
 <p>
 An option can have an unlimited number of long and short-form aliases. Aliases are specified via the <code>name</code> parameter which accepts a string of space-separated alternatives, e.g. <code>&quot;foo f&quot;</code>.
@@ -299,7 +299,7 @@ Returns the number of positional arguments.
 Commands
 </h2>
 <p>
-Args supports git-style command interfaces with arbitrarily-nested commands. Register a command on a parser instance using the <code>NewCmd()</code> method:
+Janus supports git-style command interfaces with arbitrarily-nested commands. Register a command on a parser instance using the <code>NewCmd()</code> method:
 </p>
 <pre class="lang-go pygments" data-lang="go">
 <span class="kd">func</span> <span class="p">(</span><span class="nx">parser</span> <span class="o">*</span><span class="nx">ArgParser</span><span class="p">)</span> <span class="nx">NewCmd</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">helptext</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">callback</span> <span class="kd">func</span><span class="p">(</span><span class="o">*</span><span class="nx">ArgParser</span><span class="p">))</span> <span class="o">*</span><span class="nx">ArgParser</span>

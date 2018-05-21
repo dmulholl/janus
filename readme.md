@@ -1,6 +1,6 @@
-# Args
+# Janus
 
-Args is a Go library for parsing command line arguments.
+A Go library for parsing command line arguments.
 
 
 #### Features
@@ -25,5 +25,5 @@ Args is a Go library for parsing command line arguments.
 * [Sample Application][sample]
 
 
-[docs]: https://darrenmulholland.com/docs/args/
-[sample]: https://github.com/dmulholland/args/blob/master/example/main.go
+[docs]: https://darrenmulholland.com/docs/janus-g0/
+[sample]: https://github.com/dmulholland/janus-go/blob/master/example/main.go

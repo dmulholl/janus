@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/dmulholland/args"
+    "github.com/dmulholland/janus-go/janus"
 )
 
 // This sample application will parse its own command-line arguments.
@@ -11,7 +11,7 @@ func main() {
     // We instantiate an argument parser, then specify help text and a version
     // string. Specifying help text activates an automatic --help flag;
     // specifying a version string activates an automatic --version flag.
-    parser := args.NewParser()
+    parser := janus.NewParser()
     parser.Helptext = "App Help"
     parser.Version = "1.2.3"
 
@@ -58,7 +58,7 @@ func main() {
 // Callback function for the 'foo' command. The function receives an ArgParser
 // instance containing the command's parsed arguments. Here we simply dump it
 // to stdout.
-func callback(parser *args.ArgParser) {
+func callback(parser *janus.ArgParser) {
     fmt.Println("---------- callback ----------")
     fmt.Println(parser)
     fmt.Println("------------------------------\n")

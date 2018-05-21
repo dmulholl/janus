@@ -8,15 +8,15 @@ title: API
 
 Install directly from Github:
 
-    $ go get github.com/dmulholland/args
+    $ go get github.com/dmulholland/janus-go/janus
 
-Import the `args` package:
+Import the `janus` package:
 
 ::: go
 
-    import "github.com/dmulholland/args"
+    import "github.com/dmulholland/janus-go/janus"
 
-Alternatively, you can incorporate the single, public-domain `args.go` file directly into your application. The library has no external dependencies.
+Alternatively, you can incorporate the single, public-domain `janus.go` file directly into your application. The library has no external dependencies.
 
 
 
@@ -26,7 +26,7 @@ Initialize an argument parser, optionally specifying the application's help text
 
 ::: go
 
-    parser := args.NewParser()
+    parser := janus.NewParser()
 
     parser.Helptext = "blah"
     parser.Version = "1.2.3"
@@ -44,7 +44,7 @@ Parsed option values can be retrieved from the parser instance itself.
 
 ## Register Options
 
-Args supports long-form options, `--foo`, with single-character shortcuts, `-f`.
+Janus supports long-form options, `--foo`, with single-character shortcuts, `-f`.
 
 An option can have an unlimited number of long and short-form aliases. Aliases are specified via the `name` parameter which accepts a string of space-separated alternatives, e.g. `"foo f"`.
 
@@ -172,7 +172,7 @@ Options can be preceded, followed, or interspaced with positional arguments.
 
 ## Commands
 
-Args supports git-style command interfaces with arbitrarily-nested commands. Register a command on a parser instance using the `NewCmd()` method:
+Janus supports git-style command interfaces with arbitrarily-nested commands. Register a command on a parser instance using the `NewCmd()` method:
 
 ::: go
 
