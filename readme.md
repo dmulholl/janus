@@ -1,4 +1,4 @@
-# Janus: argument parsing for Go
+# Janus
 
 A Go library for parsing command line arguments.
 
@@ -26,4 +26,4 @@ A Go library for parsing command line arguments.
 
 
 [docs]: https://darrenmulholland.com/docs/janus-go/
-[sample]: https://github.com/dmulholland/janus-go/blob/master/example/main.go
+[sample]: https://github.com/dmulholl/janus-go/blob/master/example/main.go
