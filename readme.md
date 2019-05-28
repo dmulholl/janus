@@ -1,6 +1,6 @@
 # Janus
 
-A Go library for parsing command line arguments.
+Janus is a simple argument-parsing library designed for building elegant command-line interfaces.
 
 
 #### Features
