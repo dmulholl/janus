@@ -25,5 +25,5 @@ Janus is a simple argument-parsing library designed for building elegant command
 * [Sample Application][sample]
 
 
-[docs]: https://darrenmulholland.com/docs/janus-go/
+[docs]: http://www.dmulholl.com/docs/janus-go/
 [sample]: https://github.com/dmulholl/janus-go/blob/master/example/main.go
