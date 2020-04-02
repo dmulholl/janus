@@ -2,9 +2,8 @@
 title: API
 ---
 
-:insert toc
-
----
+::: insert toc
+::: hr
 
 Install directly from Github:
 
@@ -12,7 +11,7 @@ Install directly from Github:
 
 Import the `janus` package:
 
-::: go
+::: code go
 
     import "github.com/dmulholland/janus-go/janus"
 
@@ -24,7 +23,7 @@ Alternatively, you can incorporate the single, public-domain `janus.go` file dir
 
 Initialize an argument parser, optionally specifying the application's help text and version string:
 
-::: go
+::: code go
 
     parser := janus.NewParser()
 
@@ -35,7 +34,7 @@ Specifying help text activates an automatic `--help` flag; specifying a version 
 
 You can now register your application's options and commands on the parser using the registration functions described below. Once the required options and commands have been registered, call the parser's `Parse()` method to process the application's command line arguments:
 
-::: go
+::: code go
 
     parser.Parse()
 
@@ -51,22 +50,22 @@ An option can have an unlimited number of long and short-form aliases. Aliases a
 Option values can be separated on the command line by either a space, `--foo 123`, or an equals symbol, `--foo=123`.
 
 
-||  `func (parser *ArgParser) NewFlag(name string)`  ||
+[[  `func (parser *ArgParser) NewFlag(name string)`  ]]
 
     Register a flag (a boolean option) with a default value of `false`. Flag options take no arguments but are either present (`true`) or absent (`false`).
 
 
-||  `func (parser *ArgParser) NewFloat(name string, fallback float64 = 0.0)`  ||
+[[  `func (parser *ArgParser) NewFloat(name string, fallback float64 = 0.0)`  ]]
 
     Register a floating-point option, optionally specifying a custom fallback value. (The default fallback value is `0`.)
 
 
-||  `func (parser *ArgParser) NewInt(name string, fallback int = 0)`  ||
+[[  `func (parser *ArgParser) NewInt(name string, fallback int = 0)`  ]]
 
     Register an integer option, optionally specifying a custom fallback value. (The default fallback value is `0`.)
 
 
-||  `func (parser *ArgParser) NewString(name string, fallback string = "")`  ||
+[[  `func (parser *ArgParser) NewString(name string, fallback string = "")`  ]]
 
     Register a string option, optionally specifying a custom fallback value. (The default fallback value is the empty string.)
 
@@ -79,27 +78,27 @@ An option's value can be retrieved from the parser instance using any of its reg
 Each option maintains an internal array of values --- the value of the option is the final value in the array or the fallback value if the array is empty.
 
 
-||  `func (parser *ArgParser) Found(name string) bool`  ||
+[[  `func (parser *ArgParser) Found(name string) bool`  ]]
 
     Returns true if the specified option was found while parsing.
 
 
-||  `func (parser *ArgParser) GetFlag(name string) bool`  ||
+[[  `func (parser *ArgParser) GetFlag(name string) bool`  ]]
 
     Returns the value of the specified boolean option.
 
 
-||  `func (parser *ArgParser) GetFloat(name string) float64`  ||
+[[  `func (parser *ArgParser) GetFloat(name string) float64`  ]]
 
     Returns the value of the specified floating-point option.
 
 
-||  `func (parser *ArgParser) GetInt(name string) int`  ||
+[[  `func (parser *ArgParser) GetInt(name string) int`  ]]
 
     Returns the value of the specified integer option.
 
 
-||  `func (parser *ArgParser) GetString(name string) string`  ||
+[[  `func (parser *ArgParser) GetString(name string) string`  ]]
 
     Returns the value of the specified string option.
 
@@ -110,22 +109,22 @@ Each option maintains an internal array of values --- the value of the option is
 An option's internal array of values can be retrieved from the parser instance using any of its registered aliases.
 
 
-||  `func (parser *ArgParser) GetFloatList(name string) []float64`  ||
+[[  `func (parser *ArgParser) GetFloatList(name string) []float64`  ]]
 
     Returns the specified option's list of values.
 
 
-||  `func (parser *ArgParser) GetIntList(name string) []int`  ||
+[[  `func (parser *ArgParser) GetIntList(name string) []int`  ]]
 
     Returns the specified option's list of values.
 
 
-||  `func (parser *ArgParser) GetStringList(name string) []string`  ||
+[[  `func (parser *ArgParser) GetStringList(name string) []string`  ]]
 
     Returns the specified option's list of values.
 
 
-||  `func (parser *ArgParser) LenList(name string) int`  ||
+[[  `func (parser *ArgParser) LenList(name string) int`  ]]
 
     Returns the length of the specified option's list of values.
 
@@ -137,34 +136,34 @@ An option's internal array of values can be retrieved from the parser instance u
 Options can be preceded, followed, or interspaced with positional arguments.
 
 
-||  `func (parser *ArgParser) GetArg(index int) string`  ||
+[[  `func (parser *ArgParser) GetArg(index int) string`  ]]
 
     Returns the positional argument at the specified index.
 
 
-||  `func (parser *ArgParser) GetArgs() []string`  ||
+[[  `func (parser *ArgParser) GetArgs() []string`  ]]
 
     Returns the positional arguments as a slice of strings.
 
 
-||  `func (parser *ArgParser) GetArgsAsFloats() []float64`  ||
+[[  `func (parser *ArgParser) GetArgsAsFloats() []float64`  ]]
 
     Attempts to parse and return the positional arguments as a slice of floats.
     Exits with an error message on failure.
 
 
-||  `func (parser *ArgParser) GetArgsAsInts() []int`  ||
+[[  `func (parser *ArgParser) GetArgsAsInts() []int`  ]]
 
     Attempts to parse and return the positional arguments as a slice of
     integers. Exits with an error message on failure.
 
 
-||  `func (parser *ArgParser) HasArgs() bool`  ||
+[[  `func (parser *ArgParser) HasArgs() bool`  ]]
 
     Returns true if at least one positional argument has been found.
 
 
-||  `func (parser *ArgParser) NumArgs() int`  ||
+[[  `func (parser *ArgParser) NumArgs() int`  ]]
 
     Returns the number of positional arguments.
 
@@ -174,36 +173,36 @@ Options can be preceded, followed, or interspaced with positional arguments.
 
 Janus supports git-style command interfaces with arbitrarily-nested commands. Register a command on a parser instance using the `NewCmd()` method:
 
-::: go
+::: code go
 
     func (parser *ArgParser) NewCmd(name, helptext string, callback func(*ArgParser)) *ArgParser
 
 This method returns a new `ArgParser` instance associated with the command. You can register the command's flags and options on this sub-parser using the standard methods listed above. (Note that you never need to call `Parse()` on a command parser - if a command is found, its arguments are parsed automatically.)
 
-* Like options, commands can have an unlimited number of aliases specified via the `name` string.
+(*) Like options, commands can have an unlimited number of aliases specified via the `name` string.
 
-* Commands support an automatic `--help` flag and an automatic `help <name>` command using the specified help text.
+(*) Commands support an automatic `--help` flag and an automatic `help <name>` command using the specified help text.
 
-* The specified callback function will be called if the command is found. The callback should accept the command's `ArgParser` instance as its sole argument and should have no return value.
+(*) The specified callback function will be called if the command is found. The callback should accept the command's `ArgParser` instance as its sole argument and should have no return value.
 
 The following `ArgParser` methods are also available for processing commands manually:
 
 
-||  `func (parser *ArgParser) GetCmdName() string`  ||
+[[  `func (parser *ArgParser) GetCmdName() string`  ]]
 
     Returns the command name, if the parser has found a command.
 
 
-||  `func (parser *ArgParser) GetCmdParser() *ArgParser`  ||
+[[  `func (parser *ArgParser) GetCmdParser() *ArgParser`  ]]
 
     Returns the command's parser instance, if the parser has found a command.
 
 
-||  `func (parser *ArgParser) GetParent() *ArgParser`  ||
+[[  `func (parser *ArgParser) GetParent() *ArgParser`  ]]
 
     Returns a command parser's parent parser.
 
 
-||  `func (parser *ArgParser) HasCmd() bool`  ||
+[[  `func (parser *ArgParser) HasCmd() bool`  ]]
 
     Returns true if the parser has found a command.

@@ -12,18 +12,18 @@ Janus is an argument-parsing library designed for building elegant command-line 
 
 ### Features
 
-* Long-form boolean flags with single-character shortcuts: `--flag`, `-f`.
+(*) Long-form boolean flags with single-character shortcuts: `--flag`, `-f`.
 
-* Long-form string, integer, and floating-point options with
-  single-character shortcuts: `--option <arg>`, `-o <arg>`.
+(*) Long-form string, integer, and floating-point options with
+    single-character shortcuts: `--option <arg>`, `-o <arg>`.
 
-* Condensed short-form options: `-abc <arg> <arg>`.
+(*) Condensed short-form options: `-abc <arg> <arg>`.
 
-* Automatic `--help` and `--version` flags.
+(*) Automatic `--help` and `--version` flags.
 
-* Support for multivalued options.
+(*) Support for multivalued options.
 
-* Support for git-style command interfaces with arbitrarily-nested commands.
+(*) Support for git-style command interfaces with arbitrarily-nested commands.
 
 
 
@@ -35,7 +35,7 @@ Install directly from Github:
 
 Import the `janus` package:
 
-::: go
+::: code go
 
     import "github.com/dmulholland/janus-go/janus"
 
@@ -48,8 +48,8 @@ Alternatively, you can incorporate the single, public-domain `janus.go` file dir
 * [Github Homepage][github]
 * [Sample Application][sample]
 
-[github]: https://github.com/dmulholland/janus-go
-[sample]: https://github.com/dmulholland/janus-go/blob/master/example/main.go
+[github]: https://github.com/dmulholl/janus-go
+[sample]: https://github.com/dmulholl/janus-go/blob/master/example/main.go
 
 
 
