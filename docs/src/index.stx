@@ -31,13 +31,13 @@ Janus is an argument-parsing library designed for building elegant command-line 
 
 Install directly from Github:
 
-    $ go get github.com/dmulholland/janus-go/janus
+    $ go get github.com/dmulholl/janus-go/janus
 
 Import the `janus` package:
 
 ::: code go
 
-    import "github.com/dmulholland/janus-go/janus"
+    import "github.com/dmulholl/janus-go/janus"
 
 Alternatively, you can incorporate the single, public-domain `janus.go` file directly into your application. The library has no external dependencies.
 

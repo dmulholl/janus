@@ -5,7 +5,7 @@
     <title>API</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="graphite.css">
     <link rel="stylesheet" href="pygments.css">
     
     
@@ -66,13 +66,13 @@
 Install directly from Github:
 </p>
 <pre>
-$ go get github.com/dmulholland/janus-go/janus
+$ go get github.com/dmulholl/janus-go/janus
 </pre>
 <p>
 Import the <code>janus</code> package:
 </p>
 <pre class="lang-go pygments" data-lang="go">
-<span class="kn">import</span> <span class="s">&quot;github.com/dmulholland/janus-go/janus&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;github.com/dmulholl/janus-go/janus&quot;</span>
 </pre>
 <p>
 Alternatively, you can incorporate the single, public-domain <code>janus.go</code> file directly into your application. The library has no external dependencies.
@@ -114,6 +114,7 @@ An option can have an unlimited number of long and short-form aliases. Aliases a
 Option values can be separated on the command line by either a space, <code>--foo 123</code>, or an equals symbol, <code>--foo=123</code>.
 </p>
 <dl>
+<div>
 <dt>
 <code>func (parser *ArgParser) NewFlag(name string)</code>
 </dt>
@@ -122,6 +123,8 @@ Option values can be separated on the command line by either a space, <code>--fo
 Register a flag (a boolean option) with a default value of <code>false</code>. Flag options take no arguments but are either present (<code>true</code>) or absent (<code>false</code>).
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) NewFloat(name string, fallback float64 = 0.0)</code>
 </dt>
@@ -130,6 +133,8 @@ Register a flag (a boolean option) with a default value of <code>false</code>. F
 Register a floating-point option, optionally specifying a custom fallback value. (The default fallback value is <code>0</code>.)
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) NewInt(name string, fallback int = 0)</code>
 </dt>
@@ -138,6 +143,8 @@ Register a floating-point option, optionally specifying a custom fallback value.
 Register an integer option, optionally specifying a custom fallback value. (The default fallback value is <code>0</code>.)
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) NewString(name string, fallback string = &quot;&quot;)</code>
 </dt>
@@ -146,6 +153,7 @@ Register an integer option, optionally specifying a custom fallback value. (The 
 Register a string option, optionally specifying a custom fallback value. (The default fallback value is the empty string.)
 </p>
 </dd>
+</div>
 </dl>
 <h2 id="retrieve-a-single-value">
 Retrieve A Single Value
@@ -157,6 +165,7 @@ An option's value can be retrieved from the parser instance using any of its reg
 Each option maintains an internal array of values &mdash; the value of the option is the final value in the array or the fallback value if the array is empty.
 </p>
 <dl>
+<div>
 <dt>
 <code>func (parser *ArgParser) Found(name string) bool</code>
 </dt>
@@ -165,6 +174,8 @@ Each option maintains an internal array of values &mdash; the value of the optio
 Returns true if the specified option was found while parsing.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetFlag(name string) bool</code>
 </dt>
@@ -173,6 +184,8 @@ Returns true if the specified option was found while parsing.
 Returns the value of the specified boolean option.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetFloat(name string) float64</code>
 </dt>
@@ -181,6 +194,8 @@ Returns the value of the specified boolean option.
 Returns the value of the specified floating-point option.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetInt(name string) int</code>
 </dt>
@@ -189,6 +204,8 @@ Returns the value of the specified floating-point option.
 Returns the value of the specified integer option.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetString(name string) string</code>
 </dt>
@@ -197,6 +214,7 @@ Returns the value of the specified integer option.
 Returns the value of the specified string option.
 </p>
 </dd>
+</div>
 </dl>
 <h2 id="retrieve-multiple-values">
 Retrieve Multiple Values
@@ -205,6 +223,7 @@ Retrieve Multiple Values
 An option's internal array of values can be retrieved from the parser instance using any of its registered aliases.
 </p>
 <dl>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetFloatList(name string) []float64</code>
 </dt>
@@ -213,6 +232,8 @@ An option's internal array of values can be retrieved from the parser instance u
 Returns the specified option's list of values.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetIntList(name string) []int</code>
 </dt>
@@ -221,6 +242,8 @@ Returns the specified option's list of values.
 Returns the specified option's list of values.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetStringList(name string) []string</code>
 </dt>
@@ -229,6 +252,8 @@ Returns the specified option's list of values.
 Returns the specified option's list of values.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) LenList(name string) int</code>
 </dt>
@@ -237,6 +262,7 @@ Returns the specified option's list of values.
 Returns the length of the specified option's list of values.
 </p>
 </dd>
+</div>
 </dl>
 <h2 id="retrieve-positional-arguments">
 Retrieve Positional Arguments
@@ -245,6 +271,7 @@ Retrieve Positional Arguments
 Options can be preceded, followed, or interspaced with positional arguments.
 </p>
 <dl>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetArg(index int) string</code>
 </dt>
@@ -253,6 +280,8 @@ Options can be preceded, followed, or interspaced with positional arguments.
 Returns the positional argument at the specified index.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetArgs() []string</code>
 </dt>
@@ -261,6 +290,8 @@ Returns the positional argument at the specified index.
 Returns the positional arguments as a slice of strings.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetArgsAsFloats() []float64</code>
 </dt>
@@ -270,6 +301,8 @@ Attempts to parse and return the positional arguments as a slice of floats.
 Exits with an error message on failure.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetArgsAsInts() []int</code>
 </dt>
@@ -279,6 +312,8 @@ Attempts to parse and return the positional arguments as a slice of
 integers. Exits with an error message on failure.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) HasArgs() bool</code>
 </dt>
@@ -287,6 +322,8 @@ integers. Exits with an error message on failure.
 Returns true if at least one positional argument has been found.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) NumArgs() int</code>
 </dt>
@@ -295,6 +332,7 @@ Returns true if at least one positional argument has been found.
 Returns the number of positional arguments.
 </p>
 </dd>
+</div>
 </dl>
 <h2 id="commands">
 Commands
@@ -329,6 +367,7 @@ The specified callback function will be called if the command is found. The call
 The following <code>ArgParser</code> methods are also available for processing commands manually:
 </p>
 <dl>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetCmdName() string</code>
 </dt>
@@ -337,6 +376,8 @@ The following <code>ArgParser</code> methods are also available for processing c
 Returns the command name, if the parser has found a command.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetCmdParser() *ArgParser</code>
 </dt>
@@ -345,6 +386,8 @@ Returns the command name, if the parser has found a command.
 Returns the command's parser instance, if the parser has found a command.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) GetParent() *ArgParser</code>
 </dt>
@@ -353,6 +396,8 @@ Returns the command's parser instance, if the parser has found a command.
 Returns a command parser's parent parser.
 </p>
 </dd>
+</div>
+<div>
 <dt>
 <code>func (parser *ArgParser) HasCmd() bool</code>
 </dt>
@@ -361,6 +406,7 @@ Returns a command parser's parent parser.
 Returns true if the parser has found a command.
 </p>
 </dd>
+</div>
 </dl>
 
     </article>
