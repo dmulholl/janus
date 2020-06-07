@@ -16,7 +16,7 @@ import (
 
 
 // Package version.
-const Version = "2.0.0"
+const Version = "2.1.0"
 
 
 // Print a message to stderr and exit with a non-zero error code.
@@ -227,7 +227,7 @@ func (parser *ArgParser) getOpt(name string) *option {
 }
 
 
-// Found returns true if the specified option was found while parsing.
+// Found returns true if the specified option was found.
 func (parser *ArgParser) Found(name string) bool {
     return parser.getOpt(name).found
 }
@@ -277,8 +277,8 @@ func (parser *ArgParser) GetFloat(name string) float64 {
 }
 
 
-// LenList returns the length of the specified option's list of values.
-func (parser *ArgParser) LenList(name string) int {
+// Count returns the number of times the specified option has been found.
+func (parser *ArgParser) Count(name string) int {
     opt := parser.getOpt(name)
     switch opt.optiontype {
         case "flag":
@@ -291,6 +291,12 @@ func (parser *ArgParser) LenList(name string) int {
             return len(opt.floats)
     }
     return 0
+}
+
+
+// Deprecated. Equivalent to Count().
+func (parser *ArgParser) LenList(name string) int {
+    return parser.Count(name)
 }
 
 
@@ -426,24 +432,18 @@ func (parser *ArgParser) GetParent() *ArgParser {
 
 // Parse a stream of string arguments.
 func (parser *ArgParser) parseStream(stream *argstream) {
-    parsing := true
     isFirstArg := true
 
     // Loop while we have arguments to process.
     for stream.hasNext() {
         arg := stream.next()
 
-        // If parsing has been turned off, simply add the argument to the
-        // list of positionals.
-        if !parsing {
-            parser.arguments = append(parser.arguments, arg)
-            continue
-        }
-
         // If we encounter a -- argument, turn off option-parsing.
         if arg == "--" {
-            parsing = false
-            continue
+            for stream.hasNext() {
+                parser.arguments = append(parser.arguments, stream.next())
+            }
+            break
         }
 
         // Is the argument a long-form option or flag?
