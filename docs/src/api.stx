@@ -12,7 +12,6 @@ Install directly from Github:
 Import the `janus` package:
 
 ::: code go
-
     import "github.com/dmulholl/janus-go/janus"
 
 Alternatively, you can incorporate the single, public-domain `janus.go` file directly into your application. The library has no external dependencies.
@@ -24,7 +23,6 @@ Alternatively, you can incorporate the single, public-domain `janus.go` file dir
 Initialize an argument parser, optionally specifying the application's help text and version string:
 
 ::: code go
-
     parser := janus.NewParser()
 
     parser.Helptext = "blah"
@@ -35,7 +33,6 @@ Specifying help text activates an automatic `--help` flag; specifying a version 
 You can now register your application's options and commands on the parser using the registration functions described below. Once the required options and commands have been registered, call the parser's `Parse()` method to process the application's command line arguments:
 
 ::: code go
-
     parser.Parse()
 
 Parsed option values can be retrieved from the parser instance itself.
@@ -78,9 +75,14 @@ An option's value can be retrieved from the parser instance using any of its reg
 Each option maintains an internal array of values --- the value of the option is the final value in the array or the fallback value if the array is empty.
 
 
+[[  `func (parser *ArgParser) Count(name string) int`  ]]
+
+    Returns the number of times the specified option was found.
+
+
 [[  `func (parser *ArgParser) Found(name string) bool`  ]]
 
-    Returns true if the specified option was found while parsing.
+    Returns true if the specified option was found.
 
 
 [[  `func (parser *ArgParser) GetFlag(name string) bool`  ]]
@@ -122,11 +124,6 @@ An option's internal array of values can be retrieved from the parser instance u
 [[  `func (parser *ArgParser) GetStringList(name string) []string`  ]]
 
     Returns the specified option's list of values.
-
-
-[[  `func (parser *ArgParser) LenList(name string) int`  ]]
-
-    Returns the length of the specified option's list of values.
 
 
 
@@ -174,7 +171,6 @@ Options can be preceded, followed, or interspaced with positional arguments.
 Janus supports git-style command interfaces with arbitrarily-nested commands. Register a command on a parser instance using the `NewCmd()` method:
 
 ::: code go
-
     func (parser *ArgParser) NewCmd(name, helptext string, callback func(*ArgParser)) *ArgParser
 
 This method returns a new `ArgParser` instance associated with the command. You can register the command's flags and options on this sub-parser using the standard methods listed above. (Note that you never need to call `Parse()` on a command parser - if a command is found, its arguments are parsed automatically.)
