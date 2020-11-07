@@ -1,6 +1,5 @@
 /*
-    Package janus is an argument-parsing library designed for
-    building elegant command-line interfaces.
+    Package janus is a library for parsing command line arguments.
 */
 package janus
 

@@ -1,4 +1,4 @@
 * [Home](@root/)
 * [CLI](@root/cli//)
 * [API](@root/api//)
-* [Source](https://github.com/dmulholl/janus-go)
+* [Github](https://github.com/dmulholl/janus-go)

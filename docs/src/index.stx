@@ -1,13 +1,7 @@
 ---
 title: Home
 meta title: Janus &mdash; an argument-parsing library for Go
-meta description: >
-    Janus is an argument-parsing library designed for building
-    elegant command-line interfaces.
 ---
-
-Janus is an argument-parsing library designed for building elegant command-line interfaces.
-
 
 
 ### Features
@@ -36,7 +30,6 @@ Install directly from Github:
 Import the `janus` package:
 
 ::: code go
-
     import "github.com/dmulholl/janus-go/janus"
 
 Alternatively, you can incorporate the single, public-domain `janus.go` file directly into your application. The library has no external dependencies.
@@ -45,11 +38,8 @@ Alternatively, you can incorporate the single, public-domain `janus.go` file dir
 
 ### Links
 
-* [Github Homepage][github]
-* [Sample Application][sample]
-
-[github]: https://github.com/dmulholl/janus-go
-[sample]: https://github.com/dmulholl/janus-go/blob/master/example/main.go
+* [Github](https://github.com/dmulholl/janus-go)
+* [Example](https://github.com/dmulholl/janus-go/blob/master/example/main.go)
 
 
 
