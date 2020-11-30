@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/dmulholl/janus-go/janus"
+    "github.com/dmulholl/janus/v2"
 )
 
 // This sample application will parse its own command-line arguments.
