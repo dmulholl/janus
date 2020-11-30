@@ -9,7 +9,7 @@ meta title: Janus &mdash; an argument-parsing library for Go
 * Long-form boolean flags with single-character shortcuts: `--flag`, `-f`.
 
 * Long-form string, integer, and floating-point options with
-    single-character shortcuts: `--option <arg>`, `-o <arg>`.
+  single-character shortcuts: `--option <arg>`, `-o <arg>`.
 
 * Condensed short-form options: `-abc <arg> <arg>`.
 
@@ -25,12 +25,12 @@ meta title: Janus &mdash; an argument-parsing library for Go
 
 Install directly from Github:
 
-    $ go get github.com/dmulholl/janus-go/janus
+    $ go get github.com/dmulholl/janus/v2
 
 Import the `janus` package:
 
 ::: code go
-    import "github.com/dmulholl/janus-go/janus"
+    import "github.com/dmulholl/janus/v2"
 
 Alternatively, you can incorporate the single, public-domain `janus.go` file directly into your application. The library has no external dependencies.
 
@@ -38,8 +38,8 @@ Alternatively, you can incorporate the single, public-domain `janus.go` file dir
 
 ### Links
 
-* [Github](https://github.com/dmulholl/janus-go)
-* [Example](https://github.com/dmulholl/janus-go/blob/master/example/main.go)
+* [Github](https://github.com/dmulholl/janus)
+* [Example](https://github.com/dmulholl/janus/blob/master/example/main.go)
 
 
 

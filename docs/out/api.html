@@ -30,7 +30,7 @@
 <li><a href="index.html">Home</a></li>
 <li><a href="cli.html">CLI</a></li>
 <li><a href="api.html">API</a></li>
-<li><a href="https://github.com/dmulholl/janus-go">Github</a></li>
+<li><a href="https://github.com/dmulholl/janus">Github</a></li>
 </ul>
             </nav>
         </header>
@@ -65,13 +65,13 @@
 Install directly from Github:
 </p>
 <pre>
-$ go get github.com/dmulholl/janus-go/janus
+$ go get github.com/dmulholl/janus/v2
 </pre>
 <p>
 Import the <code>janus</code> package:
 </p>
 <pre class="lang-go pygments" data-lang="go">
-<span class="kn">import</span> <span class="s">&quot;github.com/dmulholl/janus-go/janus&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;github.com/dmulholl/janus/v2&quot;</span>
 </pre>
 <p>
 Alternatively, you can incorporate the single, public-domain <code>janus.go</code> file directly into your application. The library has no external dependencies.
@@ -85,8 +85,8 @@ Initialize an argument parser, optionally specifying the application's help text
 <pre class="lang-go pygments" data-lang="go">
 <span class="nx">parser</span> <span class="o">:=</span> <span class="nx">janus</span><span class="p">.</span><span class="nx">NewParser</span><span class="p">()</span>
 
-<span class="nx">parser</span><span class="p">.</span><span class="nx">Helptext</span> <span class="p">=</span> <span class="s">&quot;blah&quot;</span>
-<span class="nx">parser</span><span class="p">.</span><span class="nx">Version</span> <span class="p">=</span> <span class="s">&quot;1.2.3&quot;</span>
+<span class="nx">parser</span><span class="p">.</span><span class="nx">Helptext</span> <span class="p">=</span> <span class="s">&quot;Usage: foobar...&quot;</span>
+<span class="nx">parser</span><span class="p">.</span><span class="nx">Version</span> <span class="p">=</span> <span class="s">&quot;1.0&quot;</span>
 </pre>
 <p>
 Specifying help text activates an automatic <code>--help</code> flag; specifying a version string activates an automatic <code>--version</code> flag. (Automatic <code>-h</code> and <code>-v</code> shortcuts are also activated unless registered by other options.)
