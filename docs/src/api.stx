@@ -85,11 +85,6 @@ Each option maintains an internal array of values --- the value of the option is
     Returns true if the specified option was found.
 
 
-[[  `func (parser *ArgParser) GetFlag(name string) bool`  ]]
-
-    Returns the value of the specified boolean option.
-
-
 [[  `func (parser *ArgParser) GetFloat(name string) float64`  ]]
 
     Returns the value of the specified floating-point option.
