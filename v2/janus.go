@@ -11,7 +11,7 @@ import (
 )
 
 // Package version.
-const Version = "2.1.0"
+const Version = "2.1.1"
 
 // Print a message to stderr and exit with a non-zero error code.
 func exit(msg string) {
@@ -199,7 +199,7 @@ func (parser *ArgParser) getOpt(name string) *option {
 	if opt, found := parser.options[name]; found {
 		return opt
 	}
-	panic(fmt.Sprintf("args: '%s' is not a registered option name", name))
+	panic(fmt.Sprintf("invalid option name '%s'", name))
 }
 
 // Found returns true if the specified option was found.
@@ -361,7 +361,7 @@ func (parser *ArgParser) HasCmd() bool {
 	return parser.command != ""
 }
 
-// GetCmd returns the command name, if the parser has found a command.
+// GetCmdName returns the command name, if the parser has found a command.
 func (parser *ArgParser) GetCmdName() string {
 	return parser.command
 }
