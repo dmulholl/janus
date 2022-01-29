@@ -1,7 +1,7 @@
 # Janus
 
-An argument-parsing library for Go.
+This library has been deprecated in favour of a successor:
 
-* [Documentation](http://www.dmulholl.com/docs/janus/master/)
-* [Example](https://github.com/dmulholl/janus/blob/master/example/main.go)
+* https://github.com/dmulholl/argo
 
+The repository is archived here for any projects still using it.
